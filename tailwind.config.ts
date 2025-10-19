@@ -20,7 +20,7 @@ export default {
         'ink-muted': '#433824',
         'ink-soft': '#615034',
         'ink-light': '#8d7c5c',
-        'surface-muted': '#fdf7ee',
+        'surface-muted': '#94764cff',
         'surface-card': '#ffffff',
       },
       borderRadius: {
