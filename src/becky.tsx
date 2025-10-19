@@ -1,22 +1,43 @@
-import ContactSection from './components/ContactSection'
+import githubIcon from './assets/github.png'
+import linkedinIcon from './assets/linkedin.png'
 
 function App() {
-  const skills = ['React', 'Vue.js', 'Node.js', 'Python', 'Figma', 'UI/UX Design']
-
-  const experiences = [
+  const contactLinks = [
     {
-      title: '資深前端工程師',
-      company: '科技公司 A | 2020 - 至今',
-      description: '負責前端與設計團隊建立產品設計系統，提升了 20% 的轉換人次。',
+      label: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/becky-liu-831234201',
+      icon: linkedinIcon,
     },
     {
-      title: 'UI/UX 設計師',
-      company: '設計工作室 B | 2018 - 2020',
-      description: '為多個產品進行使用者訪談與界面優化，專注於提高研究與實驗效率。',
+      label: 'GitHub',
+      href: 'https://github.com/L-P-J',
+      icon: githubIcon,
     },
   ]
 
-  const education = [
+  const skills = [
+    'React',
+    'Node.js',
+    'Next.js',
+    'HTML & CSS',
+    'JavaScript',
+  ]
+
+  const experiences = [
+    {
+      title: 'Software Engineer',
+      picture: '',
+      company: 'Mediatek',
+      description: [
+        'Participated in the development of a Generative AI Chat Platform, building the front-end interface with Next.js and React. Optimized page loading and interactivity, improving response speed by 15%.',
+        'Developed the Login component and implemented API integration with token-based authentication, increasing login success rate to 99%.',
+        'Implemented content-sharing features and permission validation mechanisms, enhancing operational security and user experience with a 98% success rate in permission checks, ensuring smooth feature deployment.',
+        'Responsible for bug fixing and QA testing, resolving 5+ frontend issues per week, improving platform stability and reducing user error reports by 40%.',
+        'Built an Admin Management System using Refine, Next.js, and PostgreSQL. Designed and developed frontend UI, API integration, database schema, and backend endpoints, implementing JWT authentication and model sorting features, enabling administrators to visually manage model configurations and improving maintenance efficiency by 50% while reducing development effort by 30%.',
+      ],
+    },
+  ]
+const education = [
     {
       degree: '資訊工程碩士',
       school: '國立大學 | 2016 - 2018',
@@ -26,177 +47,209 @@ function App() {
       school: '私立大學 | 2012 - 2016',
     },
   ]
-
   const projects = [
     {
-      title: '專案一 - 電商平台',
-      description: '一個開箱即用的線上購物體驗，提供流暢的購物整體流程。',
+      title: '專案 A - 行動銀行應用程式',
+      description: '設計了以行動設備為優先的銀行體驗，建立整合使用者任務和投資管理。',
+      image:
+        'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80',
     },
     {
-      title: '專案二 - 票券管理工具',
-      description: '協助票務作業與資料整合的 SaaS 雲端應用程式。',
+      title: '專案 B - 電商網站',
+      description: '為一家專業設計品牌推出了一個直覺好用的官方電商平台。',
+      image:
+        'https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=1200&q=80',
     },
     {
-      title: '專案三 - 個人部落格',
-      description: '以最新 Jamstack 技術打造的快速、現代化部落格平台。',
+      title: '專案 C - 資料儀表板',
+      description: '為一家 SaaS 公司打造了一個即時視覺化的資料儀表板。',
+      image:
+        'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80',
     },
   ]
 
   return (
-    <div className="flex min-h-screen flex-col gap-20 pb-16">
-      <header className="flex items-center justify-between border-b border-black/5 bg-surface-card px-6 py-5 md:px-[72px]">
-        <div className="flex items-center gap-3 font-semibold text-ink">
-          <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-base font-bold text-white">
-            劉珮潔
-          </span>
-          <span className="text-lg">劉珮潔</span>
+    <div className="min-h-screen bg-surface-muted pb-20">
+      <header className="border-b border-[#f2d7a5]/60 bg-white/90 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+          <nav className="hidden items-center gap-8 text-sm font-semibold text-ink-muted md:flex">
+            <a className="transition-colors hover:text-primary" href="#education">
+              教育與技能
+            </a>
+            <a className="transition-colors hover:text-primary" href="#experience">
+              工作經歷
+            </a>
+            <a className="transition-colors hover:text-primary" href="#projects">
+              專案作品
+            </a>
+          </nav>
+          <a
+            className="hidden rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(242,139,12,0.35)] transition hover:-translate-y-[1px] md:inline-flex"
+            href="mailto:john.doe@email.com"
+          >
+            聯絡我
+          </a>
         </div>
-        <nav className="hidden items-center gap-8 text-sm font-semibold text-ink-muted md:flex">
-          <a className="transition-colors hover:text-primary" href="#about">
-            關於我
-          </a>
-          <a className="transition-colors hover:text-primary" href="#projects">
-            作品集
-          </a>
-          <a className="transition-colors hover:text-primary" href="#contact">
-            聯絡方式
-          </a>
-        </nav>
       </header>
 
-      <section className="mx-6 flex flex-col-reverse items-center justify-between gap-10 rounded-[28px] bg-gradient-to-br from-[#f0f2f8] to-[#f7f8fc] px-8 py-16 text-center md:mx-[72px] md:flex-row md:gap-12 md:rounded-[36px] md:px-20 md:py-20 md:text-left">
-        <div className="max-w-[480px] space-y-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
-            軟體工程師 &amp; UI/UX 設計師
-          </p>
-          <h1 className="text-4xl font-bold leading-tight text-ink md:text-5xl">
-            我們打造兼具美感與實用性的網頁應用程式。
-          </h1>
-          <p className="text-lg text-ink-soft">
-            擁有跨領域的視角與扎實的前端技術，協助企業打造易用與有溫度的數位體驗。
-          </p>
-          <a
-            className="inline-flex items-center justify-center rounded-xl bg-primary px-7 py-3 text-base font-semibold text-white shadow-sm transition duration-200 hover:-translate-y-px hover:shadow-lg"
-            href="#contact"
-          >
-            與我聯繫
-          </a>
-        </div>
-        <div
-          className="flex flex-1 items-center justify-center"
-          aria-hidden="true"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=640&q=80"
-            alt="極簡風格的涼鞋"
-            className="h-80 w-80 rounded-full object-cover shadow-[0_16px_40px_rgba(32,42,66,0.12)]"
-          />
-        </div>
-      </section>
-
-      <section
-        className="mx-6 rounded-[28px] bg-white px-8 py-14 shadow-soft-lg md:mx-[72px] md:rounded-[32px] md:px-[72px] md:py-16"
-        id="about"
-      >
-        <div className="text-3xl font-bold text-ink">關於我</div>
-
-        <div className="mt-12 grid gap-16 md:grid-cols-2">
+      <main className="mx-auto mt-16 flex max-w-6xl flex-col gap-20 px-6" id="top">
+        <section className="grid gap-12 rounded-[36px] bg-white px-10 py-14 shadow-[0_24px_60px_rgba(242,175,77,0.18)] md:grid-cols-[1.1fr,0.9fr] md:items-center">
           <div className="space-y-8">
-            <div>
-              <h2 className="mb-4 text-2xl font-semibold text-ink">簡介</h2>
-              <p className="text-ink-soft">
-                我是一位結合設計思維的資深軟體工程師，善於將複雜的需求與數據轉換為直覺好用的產品體驗。我致力於打造兼顧效率與易用性的界面，專長於 React 與 Vue
-                等前端框架，也擁有 Node.js 和 Python 的後端經驗。
-              </p>
-            </div>
-
-            <div>
-              <h3 className="mb-4 text-lg font-semibold text-ink">技能</h3>
-              <div className="flex flex-wrap gap-3">
-                {skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded-full bg-[#eef2fb] px-4 py-2 text-sm font-semibold text-primary"
+            <span className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-1 text-sm font-semibold text-primary">
+              John Doe, 產品設計師
+            </span>
+            <h1 className="text-4xl font-semibold leading-tight text-ink md:text-[44px]">
+              我是專注於打造直覺與美感兼具的使用者體驗設計師，擅長解決複雜問題並轉化為清晰、以使用者為中心的設計。
+            </h1>
+            <p className="text-lg leading-relaxed text-ink-soft">
+              擁有產品策略與研究背景，能夠與跨部門團隊緊密合作。熟悉使用者研究、資訊架構與 UI 視覺設計流程，期望透過設計創造更具影響力的產品。
+            </p>
+            <div className="flex flex-wrap items-center gap-4">
+              <div className="flex flex-wrap items-center gap-3 text-sm font-semibold text-ink-soft">
+                {contactLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    className="inline-flex items-center gap-2 rounded-full border border-[#f2d7a5] px-4 py-2 transition hover:border-primary hover:bg-accent hover:text-primary"
+                    href={link.href}
                   >
-                    {skill}
-                  </span>
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      className="h-4 w-4 object-contain"
+                      src={link.icon}
+                    />
+                    {link.label}
+                  </a>
                 ))}
               </div>
-            </div>
-          </div>
-
-          <div className="space-y-10">
-            <div>
-              <h3 className="mb-4 text-lg font-semibold text-ink">經歷</h3>
-              <ul className="space-y-6">
-                {experiences.map((experience) => (
-                  <li key={experience.title} className="space-y-3">
-                    <h4 className="text-lg font-semibold text-ink">
-                      {experience.title}
-                    </h4>
-                    <span className="text-sm font-semibold text-ink-light">
-                      {experience.company}
-                    </span>
-                    <p className="text-ink-soft">{experience.description}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="mb-4 text-lg font-semibold text-ink">教育</h3>
-              <ul className="space-y-4">
-                {education.map((item) => (
-                  <li key={item.degree} className="space-y-1">
-                    <h4 className="text-lg font-semibold text-ink">
-                      {item.degree}
-                    </h4>
-                    <span className="text-sm font-semibold text-ink-light">
-                      {item.school}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-6 md:mx-[72px]" id="projects">
-        <div className="text-3xl font-bold text-ink">作品集</div>
-        <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
-            <article
-              key={project.title}
-              className="flex min-h-[260px] flex-col gap-4 rounded-3xl bg-white p-8 shadow-soft"
-            >
-              <div
-                className="flex h-36 items-center justify-center rounded-2xl bg-[#f0f2f7] text-4xl text-[#a2abc9]"
-                aria-hidden="true"
+              <a
+                className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-base font-semibold text-white shadow-[0_14px_28px_rgba(242,139,12,0.3)] transition hover:-translate-y-[1px]"
+                href="#"
               >
-                <span role="img" aria-label="project placeholder">
-                  🖼️
+                下載履歷
+              </a>
+            </div>
+          </div>
+          <div className="flex justify-center md:justify-end">
+            <div className="relative inline-flex h-[300px] w-[300px] items-center justify-center rounded-full bg-gradient-to-br from-[#ffe4bf] via-[#ffd49a] to-[#f2b25f] p-[10px] shadow-[0_22px_50px_rgba(242,175,77,0.2)]">
+              <img
+                src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=640&q=80"
+                alt="專業著裝的設計師肖像"
+                className="h-full w-full rounded-full object-cover shadow-[0_18px_36px_rgba(0,0,0,0.12)]"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section
+          className="grid gap-12 rounded-[32px] bg-white px-10 py-14 shadow-[0_20px_48px_rgba(242,175,77,0.14)] md:grid-cols-2"
+          id="education"
+        >
+          <div>
+            <h2 className="text-2xl font-bold text-ink">教育背景</h2>
+            <ul className="mt-8 space-y-8">
+              {education.map((item) => (
+                <li key={item.degree} className="flex gap-4">
+                  <span
+                    aria-hidden="true"
+                    className="mt-1 inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-lg font-semibold text-primary shadow-[0_10px_20px_rgba(242,175,77,0.25)]"
+                  >
+                    🎓
+                  </span>
+                  <div>
+                    <h3 className="text-lg font-semibold text-ink">{item.degree}</h3>
+                    <p className="text-sm font-semibold text-ink-light">{item.school}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold text-ink">重點技能</h2>
+            <div className="mt-8 flex flex-wrap gap-3">
+              {skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-primary shadow-[0_1px_0_rgba(242,169,65,0.35)]"
+                >
+                  {skill}
                 </span>
-              </div>
-              <h3 className="text-xl font-semibold text-ink">{project.title}</h3>
-              <p className="text-ink-soft">{project.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+              ))}
+            </div>
+          </div>
+        </section>
 
-      <ContactSection id="contact" />
+        <section
+          className="rounded-[32px] bg-white px-10 py-14 text-center shadow-[0_20px_48px_rgba(242,175,77,0.14)]"
+          id="experience"
+        >
+          <h2 className="text-2xl font-bold text-ink">工作經歷</h2>
+          <div className="mt-12 space-y-10 text-left">
+            <div className="relative border-l-2 border-[#f2d7a5] pl-10">
+              {experiences.map((experience) => (
+                <div key={experience.title} className="relative pb-10 last:pb-0">
+                  <span
+                    aria-hidden="true"
+                    className="absolute -left-[32px] top-1 inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-xl shadow-[0_10px_18px_rgba(242,175,77,0.25)]"
+                  >
+                    💼
+                  </span>
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold text-ink">{experience.title}</h3>
+                    <p className="text-sm font-semibold text-ink-light">
+                      {experience.company}
+                    </p>
+                    {Array.isArray(experience.description) ? (
+                      <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-ink-soft">
+                        {experience.description.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-sm leading-relaxed text-ink-soft">
+                        {experience.description}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-      <footer className="flex flex-col items-center gap-4 px-6 pt-12 text-sm text-ink-light md:px-[72px]">
-        <div className="flex gap-8 text-center font-semibold text-ink-muted">
-          <a className="transition-colors hover:text-primary" href="https://www.linkedin.com/feed/">
-            LinkedIn
-          </a>
-          <a className="transition-colors hover:text-primary" href="https://github.com/dashboard">
-            GitHub
-          </a>
-        </div>
-        <p className="text-xs">© 2024 becky. All Rights Reserved.</p>
-      </footer>
+        <section
+          className="rounded-[32px] bg-white px-10 py-14 shadow-[0_20px_48px_rgba(242,175,77,0.14)]"
+          id="projects"
+        >
+          <h2 className="text-2xl font-bold text-center text-ink">專案作品</h2>
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {projects.map((project) => (
+              <article
+                key={project.title}
+                className="flex h-full flex-col overflow-hidden rounded-[28px] border border-[#f7e1bd] bg-white transition hover:-translate-y-[2px] hover:shadow-[0_18px_36px_rgba(242,175,77,0.16)]"
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="h-40 w-full object-cover"
+                />
+                <div className="flex flex-1 flex-col gap-3 px-6 py-6">
+                  <h3 className="text-lg font-semibold text-ink">{project.title}</h3>
+                  <p className="text-sm leading-relaxed text-ink-soft">
+                    {project.description}
+                  </p>
+                  <a
+                    className="mt-auto inline-flex w-fit items-center gap-1 text-sm font-semibold text-primary"
+                    href="#"
+                  >
+                    了解更多<span aria-hidden="true">›</span>
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      </main>
     </div>
   )
 }
