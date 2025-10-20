@@ -29,11 +29,18 @@ function App() {
   ]
 
   const skills = [
-    'React',
-    'Node.js',
-    'Next.js',
-    'HTML & CSS',
-    'JavaScript',
+    {
+      category: 'Programming Languages',
+      items: ['JavaScript', 'TypeScript', 'HTML & CSS'],
+    },
+    {
+      category: 'Deployment',
+      items: ['Git', 'Cloudflare'],
+    },
+    {
+      category: 'Frameworks',
+      items: ['React', 'Next.js', 'Node.js'],
+    },
   ]
 
   const experiences = [
@@ -177,14 +184,18 @@ const education = [
           </div>
           <div>
             <h2 className="text-2xl font-bold text-ink">Key Skills</h2>
-            <div className="mt-8 flex flex-wrap gap-3">
-              {skills.map((skill) => (
-                <span
-                  key={skill}
-                  className="rounded-full bg-gray-100 px-4 py-2 text-sm font-semibold text-primary "
-                >
-                  {skill}
-                </span>
+            <div className="mt-8 space-y-6">
+              {skills.map((group) => (
+                <div key={group.category} className="flex flex-col gap-2 rounded-3xl border border-[#f7e1bd] bg-[#fff9f0] px-6 py-3 shadow-sm md:flex-row md:items-center md:gap-6">
+                  <h3 className="w-full text-base font-semibold text-primary md:w-48">{group.category}</h3>
+                  <div className="flex flex-wrap gap-3">
+                    {group.items.map((item) => (
+                      <span key={item} className="rounded-full bg-white px-3 py-1 text-sm font-semibold text-primary shadow-[0_6px_14px_rgba(242,175,77,0.18)]">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </div>
