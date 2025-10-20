@@ -4,6 +4,7 @@ import beckyPicture from './assets/becky-2.jpg'
 import travelItineraryPlanner from './assets/TravelItineraryPlanner.png'
 import japanItinerary from './assets/japanItinerary.png'
 import ownReact from './assets/ownReact.png'
+import pictureWeb from './assets/pictureWeb.png'
 
 type BeckyPictureProps = {
   className?: string
@@ -81,6 +82,11 @@ const education = [
       image:
         'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80',
     },
+    {
+      title: 'Restaurant Recommendation System (Master’s Thesis)',
+      description: 'Built a content-based restaurant recommender with front-end UI and database integration for master’s research.',
+      image: pictureWeb
+    },
   ]
 
   return (
@@ -115,12 +121,9 @@ const education = [
             </div>
             <div className="flex flex-col gap-6">
               <div className="space-y-2">
-                <h1 className="text-4xl font-semibold leading-tight text-ink md:text-[44px]">
+                <h2 className="text-4xl font-semibold leading-tight text-ink md:text-[44px]">
                   LIU,PEI-CHIEH
-                </h1>
-                <p className="text-lg font-semibold uppercase tracking-[0.2em] text-primary/80 bg-gray-100 rounded-[36px] px-4 w-75">
-                  Software Engineer
-                </p>
+                </h2>
               </div>
               <p className="text-lg leading-relaxed text-ink-soft">
                 Hi! I'm Becky, a developer who enjoys exploring new technologies and values efficiency.
