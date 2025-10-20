@@ -34,8 +34,8 @@ function App() {
       items: ['JavaScript', 'TypeScript', 'HTML & CSS'],
     },
     {
-      category: 'Deployment',
-      items: ['Git', 'Cloudflare'],
+      category: 'Deployment & Database',
+      items: ['Git', 'Cloudflare', 'PostgreSQL', 'SQL'],
     },
     {
       category: 'Frameworks',
