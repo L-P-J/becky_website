@@ -98,12 +98,12 @@ const education = [
               Projects
             </a>
           </nav>
-          <a
+          {/* <a
             className="rounded-full px-5 py-2 text-sm font-semibold text-white board-amber-100 transition hover:bg-amber-200 md:inline-flex"
             href="mailto:john.doe@email.com"
           >
             Download Pdf
-          </a>
+          </a> */}
         </div>
       </header>
 
