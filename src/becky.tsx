@@ -1,18 +1,10 @@
 import githubIcon from './assets/github.png'
 import linkedinIcon from './assets/linkedin.png'
-import beckyPicture from './assets/becky-2.jpg'
 import travelItineraryPlanner from './assets/TravelItineraryPlanner.png'
 import japanItinerary from './assets/japanItinerary.png'
 import ownReact from './assets/ownReact.png'
 import pictureWeb from './assets/pictureWeb.png'
 
-type BeckyPictureProps = {
-  className?: string
-}
-
-const BeckyPicture = ({ className = 'h-full w-full rounded-full object-cover shadow-[0_18px_36px_rgba(0,0,0,0.12)]' }: BeckyPictureProps) => (
-  <img src={beckyPicture} alt="becky" className={className} />
-)
 
 function App() {
   const contactLinks = [
@@ -69,30 +61,41 @@ const education = [
   ]
   const projects = [
     {
+      title: 'Japan Travel Itinerary Website ',
+      description: 'Created a trip planner for Japan with daily routes, transport, and lodging info, optimized for mobile viewing.',
+      image:japanItinerary,
+      repo: 'https://github.com/L-P-J/japan',
+      skills: ['React', 'TavaScript', 'Tailwind','cloudFlare'],
+    },
+    {
       title: 'Travel Itinerary Planner',
       description: 'Built an interactive planner with timeline, category filters, and cost tracking, featuring responsive design and reusable components.',
       image: travelItineraryPlanner,
+      repo: 'https://github.com/L-P-J',
+      skills: ['React', 'TypeScript', 'HTML & CSS'],
     },
-    {
-      title: 'Japan Travel Itinerary Website (Personal Project)',
-      description: 'Created a trip planner for Japan with daily routes, transport, and lodging info, optimized for mobile viewing.',
-      image:japanItinerary
-    },
+
     {
       title: 'Custom React Practice Project',
       description: 'Developed a self-built React project to explore routing, state management, and component reuse.',
-      image: ownReact
+      image: ownReact,
+      repo: 'https://github.com/L-P-J/own-react',
+      skills: ['React'],
     },
     {
       title: 'Restaurant Recommendation System (Master’s Thesis)',
       description: 'Built a content-based restaurant recommender with front-end UI and database integration for master’s research.',
       image:
         'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80',
+      repo: 'https://github.com/L-P-J',
+      skills: ['React','Node.js','PostgreSQL'],
     },
     {
-      title: 'Restaurant Recommendation System (Master’s Thesis)',
-      description: 'Built a content-based restaurant recommender with front-end UI and database integration for master’s research.',
-      image: pictureWeb
+      title: 'picture website',
+      description: 'Developed an image search web app by integrating the Pexels API, allowing users to browse and search photos by keywords. Implemented pagination, responsive layout, and loading optimization to enhance user experience.',
+      image: pictureWeb,
+      repo: 'https://github.com/L-P-J/pictureweb',
+      skills: ['React', 'JavaScript', 'git'],
     },
   ]
 
@@ -123,13 +126,10 @@ const education = [
       <main className="mx-auto mt-16 flex max-w-6xl flex-col gap-20 px-6" id="top">
         <section className="flex flex-col gap-12 rounded-[36px] bg-white px-10 py-14 shadow-[0_24px_60px_rgba(242,175,77,0.18)]">
           <div className="flex flex-col gap-8 md:flex-row md:items-start md:gap-12">
-            <div className="relative inline-flex h-[220px] w-[220px] shrink-0 items-center justify-center rounded-full md:h-[200px] md:w-[200px]">
-              <BeckyPicture className="h-full w-full rounded-full object-cover shadow-[0_18px_36px_rgba(0,0,0,0.12)]" />
-            </div>
             <div className="flex flex-col gap-6">
               <div className="space-y-2">
                 <h2 className="text-4xl font-semibold leading-tight text-ink md:text-[44px]">
-                  LIU,PEI-CHIEH
+                  LIU,PEI-CHIEH (becky)
                 </h2>
               </div>
               <p className="text-lg leading-relaxed text-ink-soft">
@@ -186,9 +186,12 @@ const education = [
             <h2 className="text-2xl font-bold text-ink">Key Skills</h2>
             <div className="mt-8 space-y-6">
               {skills.map((group) => (
-                <div key={group.category} className="flex flex-col gap-2 rounded-3xl border border-[#f7e1bd] bg-[#fff9f0] px-6 py-3 shadow-sm md:flex-row md:items-center md:gap-6">
-                  <h3 className="w-full text-base font-semibold text-primary md:w-48">{group.category}</h3>
-                  <div className="flex flex-wrap gap-3">
+                <div
+                  key={group.category}
+                  className="flex flex-col gap-2 rounded-3xl border border-[#f7e1bd] bg-[#fff9f0] px-6 py-3 shadow-sm md:grid md:grid-cols-[220px_auto] md:items-start md:gap-x-6 md:gap-y-0"
+                >
+                  <h3 className="text-base font-semibold text-primary md:self-start">{group.category}</h3>
+                  <div className="flex flex-wrap gap-3 md:items-start">
                     {group.items.map((item) => (
                       <span key={item} className="rounded-full bg-white px-3 py-1 text-sm font-semibold text-primary shadow-[0_6px_14px_rgba(242,175,77,0.18)]">
                         {item}
@@ -254,11 +257,29 @@ const education = [
                   <p className="text-sm leading-relaxed text-ink-soft">
                     {project.description}
                   </p>
-                  <a
-                    className="mt-auto inline-flex w-fit items-center gap-1 text-sm font-semibold text-primary"
-                    href="#"
-                  >
-                  </a>
+                  {project.skills?.length ? (
+                    <div className="flex flex-wrap gap-2">
+                      {project.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary]"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  ) : null}
+                  {project.repo ? (
+                    <a
+                      className="mt-auto inline-flex w-fit items-center gap-1 text-sm font-semibold text-primary transition hover:text-primary/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                      href={project.repo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View on GitHub
+                      <span aria-hidden="true">↗</span>
+                    </a>
+                  ) : null}
                 </div>
               </article>
             ))}
