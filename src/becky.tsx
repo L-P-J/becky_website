@@ -4,6 +4,7 @@ import travelItineraryPlanner from './assets/TravelItineraryPlanner.png'
 import japanItinerary from './assets/japanItinerary.png'
 import ownReact from './assets/ownReact.png'
 import pictureWeb from './assets/pictureWeb.png'
+import mediaTek from './assets/mediaTekLogo.png'
 
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
   const experiences = [
     {
       title: 'Software Engineer',
-      picture: '',
+      picture: mediaTek,
       company: 'Mediatek',
       description: [
         'Participated in the development of a Generative AI Chat Platform, building the front-end interface with Next.js and React. Optimized page loading and interactivity, improving response speed by 15%.',
@@ -215,9 +216,18 @@ const education = [
                 <div key={experience.title} className="relative pb-10 last:pb-0">
                   <div className="space-y-2">
                     <h3 className="text-2xl font-semibold text-ink">{experience.title}</h3>
-                    <p className="text-xl font-semibold text-ink-light">
-                      {experience.company}
-                    </p>
+                    <div className="flex items-center gap-3">
+                      <span className="flex h-12 w-12 items-center justify-center rounded-full  bg-white shadow-[0_10px_20px_rgba(242,175,77,0.18)]">
+                        <img
+                          src={experience.picture}
+                          alt={`${experience.company} logo`}
+                          className="h-8 w-8 object-contain"
+                        />
+                      </span>
+                      <p className="text-xl font-semibold text-ink-light">
+                        {experience.company}
+                      </p>
+                    </div>
                     {Array.isArray(experience.description) ? (
                       <ul className="list-disc space-y-2 pl-5 text-l leading-relaxed text-ink-soft">
                         {experience.description.map((item) => (
