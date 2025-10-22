@@ -138,24 +138,20 @@ function App() {
         </div>
       </header>
 
-      <main
-        className="mx-auto mt-16 flex max-w-6xl flex-col gap-20 px-6"
-        id="top"
-      >
+      <main className="mx-auto mt-16 flex max-w-6xl flex-col gap-20 px-6" id="top">
         <section className="flex flex-col gap-12 rounded-[36px] bg-white px-10 py-14 shadow-[0_24px_60px_rgba(242,175,77,0.18)]">
           <div className="flex flex-col gap-8 md:flex-row md:items-start md:gap-12">
             <div className="flex flex-col gap-6">
               <div className="space-y-2">
                 <h2 className="text-4xl font-semibold leading-tight text-ink md:text-[44px]">
-                  LIU,PEI-CHIEH (becky)
+                  Liu Pei-Chieh (Becky)
                 </h2>
               </div>
               <p className="text-lg leading-relaxed text-ink-soft">
-                Hi! I'm Becky, a developer who enjoys exploring new technologies
-                and values efficiency. I excel at planning project workflows and
-                actively look for tools or methods that improve team
-                productivity. Recently, I’ve been focusing on leveraging AI to
-                make development more creative and efficient.
+                Hi! I'm Becky, a developer who enjoys exploring new technologies and values
+                efficiency. I excel at planning project workflows and actively look for tools or
+                methods that improve team productivity. Recently, I’ve been focusing on leveraging
+                AI to make development more creative and efficient.
               </p>
               <div className="flex flex-wrap items-center gap-4">
                 <div className="flex flex-wrap items-center gap-3 text-sm font-semibold text-ink-soft">
@@ -196,12 +192,8 @@ function App() {
                     🎓
                   </span>
                   <div>
-                    <h3 className="text-lg font-semibold text-ink">
-                      {item.degree}
-                    </h3>
-                    <p className="text-sm font-semibold text-ink-light">
-                      {item.school}
-                    </p>
+                    <h3 className="text-lg font-semibold text-ink">{item.degree}</h3>
+                    <p className="text-sm font-semibold text-ink-light">{item.school}</p>
                   </div>
                 </li>
               ))}
@@ -242,14 +234,9 @@ function App() {
           <div className="mt-12 space-y-10 text-left">
             <div className="relative border-l-2 border-[#f2d7a5] pl-10">
               {experiences.map((experience) => (
-                <div
-                  key={experience.title}
-                  className="relative pb-10 last:pb-0"
-                >
+                <div key={experience.title} className="relative pb-10 last:pb-0">
                   <div className="space-y-2">
-                    <h3 className="text-2xl font-semibold text-ink">
-                      {experience.title}
-                    </h3>
+                    <h3 className="text-2xl font-semibold text-ink">{experience.title}</h3>
                     <div className="flex items-center gap-3">
                       <span className="flex h-12 w-12 items-center justify-center rounded-full  bg-white shadow-[0_10px_20px_rgba(242,175,77,0.18)]">
                         <img
@@ -258,9 +245,7 @@ function App() {
                           className="h-8 w-8 object-contain"
                         />
                       </span>
-                      <p className="text-xl font-semibold text-ink-light">
-                        {experience.company}
-                      </p>
+                      <p className="text-xl font-semibold text-ink-light">{experience.company}</p>
                     </div>
                     {Array.isArray(experience.description) ? (
                       <ul className="list-disc space-y-2 pl-5 text-l leading-relaxed text-ink-soft">
@@ -291,18 +276,10 @@ function App() {
                 key={project.title}
                 className="flex h-full flex-col overflow-hidden rounded-[28px] border border-[#f7e1bd] bg-white transition hover:-translate-y-[2px] hover:shadow-[0_18px_36px_rgba(242,175,77,0.16)]"
               >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="h-40 w-full object-cover"
-                />
+                <img src={project.image} alt={project.title} className="h-40 w-full object-cover" />
                 <div className="flex flex-1 flex-col gap-3 px-6 py-6">
-                  <h3 className="text-lg font-semibold text-ink">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-ink-soft">
-                    {project.description}
-                  </p>
+                  <h3 className="text-lg font-semibold text-ink">{project.title}</h3>
+                  <p className="text-sm leading-relaxed text-ink-soft">{project.description}</p>
                   {project.skills?.length ? (
                     <div className="flex flex-wrap gap-2">
                       {project.skills.map((skill) => (
