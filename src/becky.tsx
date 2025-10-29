@@ -5,6 +5,7 @@ import japanItinerary from "./assets/japanItinerary.png";
 import ownReact from "./assets/ownReact.png";
 import pictureWeb from "./assets/pictureWeb.png";
 import mediaTek from "./assets/mediaTekLogo.png";
+import stitch from "./assets/stitch.png";
 
 function App() {
   const contactLinks = [
@@ -13,7 +14,6 @@ function App() {
       href: "https://www.linkedin.com/in/becky-liu-831234201",
       icon: linkedinIcon,
     },
-
     {
       label: "GitHub",
       href: "https://github.com/L-P-J",
@@ -40,7 +40,7 @@ function App() {
     {
       title: "Software Engineer",
       picture: mediaTek,
-      company: "Mediatek",
+      company: "MediaTek",
       description: [
         "Participated in the development of a Generative AI Chat Platform, building the front-end interface with Next.js and React. Optimized page loading and interactivity, improving response speed by 15%.",
         "Developed the Login component and implemented API integration with token-based authentication, increasing login success rate to 99%.",
@@ -50,16 +50,18 @@ function App() {
       ],
     },
   ];
+
   const education = [
     {
       degree: "Master of Information Management",
       school: "NCUE | 2022 - 2024",
     },
     {
-      degree: "Bachelor’s Degree in Digital Marketing",
+      degree: "Bachelor's Degree in Digital Marketing",
       school: "NTPU | 2018 - 2022",
     },
   ];
+
   const projects = [
     {
       title: "Japan Travel Itinerary Website ",
@@ -67,7 +69,7 @@ function App() {
         "Created a trip planner for Japan with daily routes, transport, and lodging info, optimized for mobile viewing.",
       image: japanItinerary,
       repo: "https://github.com/L-P-J/japan",
-      skills: ["React", "TavaScript", "Tailwind", "cloudFlare"],
+      skills: ["React", "JavaScript", "Tailwind", "Cloudflare"],
     },
     {
       title: "Travel Itinerary Planner",
@@ -77,7 +79,6 @@ function App() {
       repo: "https://github.com/L-P-J",
       skills: ["React", "TypeScript", "HTML & CSS"],
     },
-
     {
       title: "Custom React Practice Project",
       description:
@@ -87,21 +88,29 @@ function App() {
       skills: ["React"],
     },
     {
-      title: "Restaurant Recommendation System (Master’s Thesis)",
+      title: "Restaurant Recommendation System (Master's Thesis)",
       description:
-        "Built a content-based restaurant recommender with front-end UI and database integration for master’s research.",
+        "Built a content-based restaurant recommender with front-end UI and database integration for master's research.",
       image:
         "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80",
       repo: "https://github.com/L-P-J",
       skills: ["React", "Node.js", "PostgreSQL"],
     },
     {
-      title: "picture website",
+      title: "Picture Website",
       description:
         "Developed an image search web app by integrating the Pexels API, allowing users to browse and search photos by keywords. Implemented pagination, responsive layout, and loading optimization to enhance user experience.",
       image: pictureWeb,
       repo: "https://github.com/L-P-J/pictureweb",
       skills: ["React", "JavaScript", "git"],
+    },
+    {
+      title: "tech talk - stitch",
+      description:
+        "Introducing Google Stitch - an AI-powered concept for creating and utilizing mobile and web user interfaces.",
+      image: stitch,
+      repo: "https://github.com/L-P-J/google-stitch",
+      skills: ["slidev", "git", "stitch"],
     },
   ];
 
@@ -150,7 +159,7 @@ function App() {
               <p className="text-lg leading-relaxed text-ink-soft">
                 Hi! I'm Becky, a developer who enjoys exploring new technologies and values
                 efficiency. I excel at planning project workflows and actively look for tools or
-                methods that improve team productivity. Recently, I’ve been focusing on leveraging
+                methods that improve team productivity. Recently, I've been focusing on leveraging
                 AI to make development more creative and efficient.
               </p>
               <div className="flex flex-wrap items-center gap-4">
@@ -158,7 +167,7 @@ function App() {
                   {contactLinks.map((link) => (
                     <a
                       key={link.label}
-                      className="inline-flex items-center gap-2 rounded-full border border-[#f2d7a5] px-4 py-2 transition hover:border-primary hover:bg-accent hover:text-primary"
+                      className="inline-flex items-center gap-2 rounded-full border border-[#f2d7a5] px-4 py-2 transition hover:bg-amber-200"
                       href={link.href}
                     >
                       <img
@@ -248,7 +257,7 @@ function App() {
                       <p className="text-xl font-semibold text-ink-light">{experience.company}</p>
                     </div>
                     {Array.isArray(experience.description) ? (
-                      <ul className="list-disc space-y-2 pl-5 text-l leading-relaxed text-ink-soft">
+                      <ul className="list-disc space-y-2 pl-5 text-base leading-relaxed text-ink-soft">
                         {experience.description.map((item) => (
                           <li key={item}>{item}</li>
                         ))}
@@ -285,7 +294,7 @@ function App() {
                       {project.skills.map((skill) => (
                         <span
                           key={skill}
-                          className="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary]"
+                          className="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary"
                         >
                           {skill}
                         </span>
@@ -300,7 +309,7 @@ function App() {
                       rel="noopener noreferrer"
                     >
                       View on GitHub
-                      <span aria-hidden="true">↗</span>
+                      <span aria-hidden="true">-&gt;</span>
                     </a>
                   ) : null}
                 </div>
