@@ -167,7 +167,7 @@ function App() {
                   {contactLinks.map((link) => (
                     <a
                       key={link.label}
-                      className="inline-flex items-center gap-2 rounded-full border border-[#f2d7a5] px-4 py-2 transition hover:border-primary hover:bg-accent hover:text-primary"
+                      className="inline-flex items-center gap-2 rounded-full border border-[#f2d7a5] px-4 py-2 transition hover:bg-amber-200"
                       href={link.href}
                     >
                       <img
