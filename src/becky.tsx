@@ -2,6 +2,7 @@ import githubIcon from "./assets/github.png";
 import linkedinIcon from "./assets/linkedin.png";
 import travelItineraryPlanner from "./assets/TravelItineraryPlanner.png";
 import voiceNote from "./assets/voiceNote.png";
+import japanItinerary from "./assets/japanItinerary.png";
 import ownReact from "./assets/ownReact.png";
 import pictureWeb from "./assets/pictureWeb.png";
 import mediaTek from "./assets/mediaTekLogo.png";
@@ -70,6 +71,14 @@ function App() {
       image: voiceNote,
       repo: "https://github.com/L-P-J/recode",
       skills: ["Vue", "TypeScript", "Tailwind", "Azure"],
+    },
+     {
+      title: "Japan Travel Itinerary Website ",
+      description:
+        "Created a trip planner for Japan with daily routes, transport, and lodging info, optimized for mobile viewing.",
+      image: japanItinerary,
+      repo: "https://github.com/L-P-J/japan",
+      skills: ["React", "JavaScript", "Tailwind", "Cloudflare"]
     },
     {
       title: "Travel Itinerary Planner",
