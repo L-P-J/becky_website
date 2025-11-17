@@ -1,7 +1,7 @@
 import githubIcon from "./assets/github.png";
 import linkedinIcon from "./assets/linkedin.png";
 import travelItineraryPlanner from "./assets/TravelItineraryPlanner.png";
-import japanItinerary from "./assets/japanItinerary.png";
+import voiceNote from "./assets/voiceNote.png";
 import ownReact from "./assets/ownReact.png";
 import pictureWeb from "./assets/pictureWeb.png";
 import mediaTek from "./assets/mediaTekLogo.png";
@@ -64,12 +64,12 @@ function App() {
 
   const projects = [
     {
-      title: "Japan Travel Itinerary Website ",
+      title: "VoiceNote",
       description:
-        "Created a trip planner for Japan with daily routes, transport, and lodging info, optimized for mobile viewing.",
-      image: japanItinerary,
-      repo: "https://github.com/L-P-J/japan",
-      skills: ["React", "JavaScript", "Tailwind", "Cloudflare"],
+        "The VoiceNote interface shown in the provided mockup and wires it to Azure Speech Services. Users can capture a note, stop recording, and let Azure convert the buffered audio into text",
+      image: voiceNote,
+      repo: "https://github.com/L-P-J/recode",
+      skills: ["Vue", "TypeScript", "Tailwind", "Azure"],
     },
     {
       title: "Travel Itinerary Planner",
