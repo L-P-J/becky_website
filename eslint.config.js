@@ -24,7 +24,6 @@ export default defineConfig([
       globals: globals.browser,
     },
     rules: {
-      "prettier/prettier": ["error", { printWidth: 100 }],
     },
   },
 ]);

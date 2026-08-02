@@ -1,10 +1,12 @@
 import githubIcon from "./assets/github.png";
 import linkedinIcon from "./assets/linkedin.png";
 import travelItineraryPlanner from "./assets/TravelItineraryPlanner.png";
+import voiceNote from "./assets/voiceNote.png";
 import japanItinerary from "./assets/japanItinerary.png";
 import ownReact from "./assets/ownReact.png";
 import pictureWeb from "./assets/pictureWeb.png";
 import mediaTek from "./assets/mediaTekLogo.png";
+import stitch from "./assets/stitch.png";
 import type { ReactNode } from "react";
 
 function SectionHeading({
@@ -79,6 +81,14 @@ function App() {
 
   const projects = [
     {
+      title: "VoiceNote",
+      description:
+        "Built a voice-note interface connected to Azure Speech Services, allowing users to capture audio and convert recordings into text.",
+      image: voiceNote,
+      repo: "https://github.com/L-P-J/recode",
+      skills: ["Vue", "TypeScript", "Tailwind", "Azure"],
+    },
+    {
       title: "Japan Travel Itinerary Website",
       description:
         "Created a trip planner for Japan with daily routes, transport, and lodging information, optimized for mobile viewing.",
@@ -118,6 +128,14 @@ function App() {
       image: pictureWeb,
       repo: "https://github.com/L-P-J/pictureweb",
       skills: ["React", "JavaScript", "Git"],
+    },
+    {
+      title: "Google Stitch Tech Talk",
+      description:
+        "Created a technical talk introducing Google Stitch, an AI-powered concept for creating and using mobile and web interfaces.",
+      image: stitch,
+      repo: "https://github.com/L-P-J/google-stitch",
+      skills: ["Slidev", "Git", "Stitch"],
     },
   ];
 
