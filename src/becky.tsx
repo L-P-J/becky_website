@@ -7,23 +7,16 @@ import ownReact from "./assets/ownReact.png";
 import pictureWeb from "./assets/pictureWeb.png";
 import mediaTek from "./assets/mediaTekLogo.png";
 import stitch from "./assets/stitch.png";
+import wits from "./assets/wits.jpeg";
 import type { ReactNode } from "react";
 
-function SectionHeading({
-  number,
-  children,
-}: {
-  number: string;
-  children: ReactNode;
-}) {
+function SectionHeading({ number, children }: { number: string; children: ReactNode }) {
   return (
     <div className="mb-8 flex items-center gap-4">
       <span className="font-mono text-xs font-semibold tracking-[0.2em] text-blue-700">
         {number}
       </span>
-      <h2 className="text-2xl font-semibold tracking-tight text-zinc-950">
-        {children}
-      </h2>
+      <h2 className="text-2xl font-semibold tracking-tight text-zinc-950">{children}</h2>
       <span className="h-px flex-1 bg-zinc-200" aria-hidden="true" />
     </div>
   );
@@ -54,6 +47,20 @@ function App() {
   const experiences = [
     {
       title: "Software Engineer",
+      period: "May 2026 – Present",
+      project: "MTBF Problem Solving (Internal AI Desktop Tool)",
+      picture: wits,
+      company: "Wistron ITS (MediaTek Project)",
+      description: [
+        "Reduced MTBF troubleshooting time by approximately 70% by building an AI-powered desktop application with searchable knowledge retrieval and streaming chat.",
+        "Improved development and maintenance efficiency by approximately 40% by refactoring a legacy application into a modular frontend/backend architecture.",
+        "Established CI/CD quality gates with ESLint, 70% code coverage, dependency scanning, and end-to-end testing to improve release reliability.",
+        "Improved tester self-service efficiency by approximately 50% by creating 15+ knowledge-base articles and standardizing workflows across 20+ failure cases.",
+      ],
+    },
+    {
+      title: "Software Engineer",
+      period: "Nov 2024– Nov 2025",
       picture: mediaTek,
       company: "MediaTek",
       description: [
@@ -147,7 +154,7 @@ function App() {
             href="#top"
             className="font-display text-lg font-semibold tracking-tight text-zinc-950"
           >
-            BL.
+            BECKY,LIU
           </a>
           <nav
             aria-label="Primary navigation"
@@ -186,17 +193,16 @@ function App() {
             </h1>
           </div>
           <p className="max-w-xs text-base leading-7 text-zinc-600 md:mb-1">
-            Frontend engineer focused on thoughtful product experiences,
-            efficient workflows, and practical applications of AI.
+            Frontend engineer focused on thoughtful product experiences, efficient workflows, and
+            practical applications of AI.
           </p>
         </section>
 
         <section className="grid gap-10 border-b border-zinc-200 py-12 md:grid-cols-[minmax(0,1fr)_220px] md:py-16">
           <p className="max-w-2xl text-lg leading-8 text-zinc-700">
-            I enjoy exploring new technologies and making complex work feel
-            clear and useful. I bring a structured approach to delivery,
-            actively seek better tools and processes, and care about the details
-            that make a product dependable.
+            I enjoy exploring new technologies and making complex work feel clear and useful. I
+            bring a structured approach to delivery, actively seek better tools and processes, and
+            care about the details that make a product dependable.
           </p>
           <div className="flex flex-wrap gap-3 md:flex-col md:items-start">
             {contactLinks.map((link) => (
@@ -224,8 +230,8 @@ function App() {
           <SectionHeading number="01">Experience</SectionHeading>
           {experiences.map((experience) => (
             <article
-              key={experience.title}
-              className="grid gap-7 md:grid-cols-[220px_minmax(0,1fr)]"
+              key={`${experience.company}-${experience.period ?? experience.title}`}
+              className="grid gap-7 border-t border-zinc-200 pt-10 first:border-t-0 first:pt-0 md:grid-cols-[220px_minmax(0,1fr)]"
             >
               <div className="flex items-center gap-3 md:items-start">
                 <img
@@ -234,17 +240,20 @@ function App() {
                   className="h-10 w-10 rounded border border-zinc-200 object-contain p-1"
                 />
                 <div>
-                  <p className="font-semibold text-zinc-950">
-                    {experience.company}
-                  </p>
-                  <p className="text-sm text-zinc-500">Software Engineering</p>
+                  <p className="font-semibold text-zinc-950">{experience.company}</p>
                 </div>
               </div>
               <div>
-                <h3 className="font-display text-3xl font-semibold tracking-tight text-zinc-950">
+                <h3 className="font-display text-2xl font-semibold tracking-tight text-zinc-950">
                   {experience.title}
                 </h3>
-                <ul className="mt-6 max-w-3xl space-y-3 text-[15px] leading-7 text-zinc-700">
+                {experience.period && (
+                  <p className="mt-2 text-sm font-medium text-zinc-500">{experience.period}</p>
+                )}
+                {experience.project && (
+                  <p className="mt-4 text-sm font-semibold text-zinc-900">{experience.project}</p>
+                )}
+                <ul className="mt-6 max-w-3xl space-y-3 text-base leading-7 text-zinc-700">
                   {experience.description.map((item) => (
                     <li key={item} className="grid grid-cols-[10px_1fr] gap-3">
                       <span
@@ -281,15 +290,11 @@ function App() {
                   />
                 </a>
                 <div className="flex flex-1 flex-col pt-5">
-                  <p className="font-mono text-xs text-blue-700">
-                    0{index + 1}
-                  </p>
+                  <p className="font-mono text-xs text-blue-700">0{index + 1}</p>
                   <h3 className="mt-2 text-lg font-semibold leading-snug text-zinc-950">
                     {project.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-6 text-zinc-600">
-                    {project.description}
-                  </p>
+                  <p className="mt-3 text-sm leading-6 text-zinc-600">{project.description}</p>
                   <div className="mt-5 flex flex-wrap gap-x-3 gap-y-2 text-xs font-medium uppercase tracking-wide text-zinc-500">
                     {project.skills.map((skill) => (
                       <span key={skill}>{skill}</span>
@@ -314,16 +319,11 @@ function App() {
             <SectionHeading number="03">Education</SectionHeading>
             <div className="space-y-7">
               {education.map((item) => (
-                <article
-                  key={item.degree}
-                  className="border-l-2 border-zinc-200 pl-5"
-                >
+                <article key={item.degree} className="border-l-2 border-zinc-200 pl-5">
                   <p className="font-mono text-xs font-semibold tracking-wide text-blue-700">
                     {item.period}
                   </p>
-                  <h3 className="mt-2 text-lg font-semibold text-zinc-950">
-                    {item.degree}
-                  </h3>
+                  <h3 className="mt-2 text-lg font-semibold text-zinc-950">{item.degree}</h3>
                   <p className="mt-1 text-sm text-zinc-600">{item.school}</p>
                 </article>
               ))}
@@ -333,16 +333,9 @@ function App() {
             <SectionHeading number="04">Skills</SectionHeading>
             <div className="space-y-5">
               {skills.map((group) => (
-                <div
-                  key={group.category}
-                  className="border-b border-zinc-200 pb-5"
-                >
-                  <h3 className="text-sm font-semibold text-zinc-950">
-                    {group.category}
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-zinc-600">
-                    {group.items.join(" · ")}
-                  </p>
+                <div key={group.category} className="border-b border-zinc-200 pb-5">
+                  <h3 className="text-sm font-semibold text-zinc-950">{group.category}</h3>
+                  <p className="mt-2 text-sm leading-6 text-zinc-600">{group.items.join(" · ")}</p>
                 </div>
               ))}
             </div>
