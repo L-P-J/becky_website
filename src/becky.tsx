@@ -8,6 +8,7 @@ import pictureWeb from "./assets/pictureWeb.png";
 import mediaTek from "./assets/mediaTekLogo.png";
 import stitch from "./assets/stitch.png";
 import wits from "./assets/wits.jpeg";
+import downloadIcon from "./assets/download.png";
 import type { ReactNode } from "react";
 
 function SectionHeading({ number, children }: { number: string; children: ReactNode }) {
@@ -205,6 +206,14 @@ function App() {
             care about the details that make a product dependable.
           </p>
           <div className="flex flex-wrap gap-3 md:flex-col md:items-start">
+            <a
+              href="/becky-cv.pdf"
+              download="Becky-Liu-Resume.pdf"
+              className="inline-flex min-h-11 items-center gap-2 border-b border-zinc-300 py-1 text-sm font-semibold text-zinc-900 transition-colors hover:border-blue-700 hover:text-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-700"
+            >
+              <img alt="" aria-hidden="true" className="h-4 w-4 object-contain" src={downloadIcon} />
+              Download résumé
+            </a>
             {contactLinks.map((link) => (
               <a
                 key={link.label}
